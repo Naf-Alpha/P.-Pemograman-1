@@ -8,7 +8,7 @@ public class Tugas7 {
         int count = 0;
         if (x % 2 == 1) {
             for (int i = (x/2)+1; i > 1 ; i--){
-                for (int j = x; j >+ i -1; j--) {
+                for (int j = x; j > i -1; j--) {
                     System.out.print(" ");
                 }
                 for (int k = 0; k <= (i*2)-2; k++) {
@@ -27,7 +27,7 @@ public class Tugas7 {
             }
         } else {
             for (int i = (x/2)+1; i > 1 ; i--){
-                for (int j = x; j >+ i -1; j--) {
+                for (int j = x; j > i -1; j--) {
                     System.out.print(" ");
                 }
                 for (int k = 0; k <= (i*2)-2; k++) {
