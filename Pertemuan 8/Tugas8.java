@@ -2,37 +2,34 @@ import java.util.Scanner;
 
 public class Tugas8 {
     public static void main(String[] args) {
-        String[] nama = new String[5];
-        double[] ipk = new double[5];
+        String[] nama = new String[1000];
+        double[] ipk = new double[1000];
         String[] ex = {"Exit", "exit"};
+        int i;
         double total = 0;
-        double digit = 0;
-        for (int i = 0; i < 5; i++) {
+        for (i = 1; i <= 1000; i++) {
             Scanner scan = new Scanner(System.in);
-            System.out.println("Data " + (i + 1) + " : ");
+            System.out.println("Data " + i + " : ");
             System.out.print("Nama Mahasiswa = ");
-            nama[i] = scan.nextLine();
-            if (nama[i].equals(ex[0]) || nama[i].equals(ex[1])) {
+            String namacek = scan.nextLine();
+            if (namacek.equals(ex[0]) || namacek.equals(ex[1])) {
                 break;
+            } else {
+                nama[i] = namacek;
             }
             System.out.print("IPK Mahasiswa = ");
-            ipk[i] = scan.nextDouble();
+            double nilai = scan.nextDouble();
+            ipk[i] = nilai;
             System.out.println();
+            total = total + ipk[i];
         }
             System.out.println("No\tNama\t\tIPK");
             System.out.println("-----------------------------");
-        for (int i = 0; i < nama.length; i++) {
-            if (nama[i].equals(ex[0]) || nama[i].equals(ex[1])) {
-                break;
-            } else {
-                System.out.println((i + 1) + "." + "\t" + nama[i] + "\t\t" + ipk[i]);
-            }
-        }
-        for (int i = 0; i < ipk.length; i++) {
-            total = total + ipk[i];
-            digit = i;
+        for (int j = 1; j < i; j++) {
+            System.out.println(j + "\t" + nama[j] + "\t\t" + ipk[j]);
         }
         System.out.println("-----------------------------");
-        System.out.println("Rata - rata\t=\t" + total / (digit - 1));
+        
+        System.out.println("Rata - rata\t=\t" + total / (i - 1));
     }
 }
